@@ -1,0 +1,20 @@
+{
+  "presets": ["react", "env", "stage-0"],
+  "plugins": [
+    "babel-plugin-transform-runtime",
+    "babel-plugin-styled-components",
+    "transform-decorators-legacy"
+  ],
+  "env": {
+    "development": {
+      "plugins": [
+        [
+          "module-resolver",
+          {
+            "root": ["./src/app"]
+          }
+        ]
+      ]
+    }
+  }
+}
