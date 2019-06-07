@@ -34,7 +34,7 @@ config.module = {
       exclude: /node_modules/,
     },
     {
-      test: /\.(sass|scss)$/,
+      test: /\.(sass|scss|css)$/,
       use: ExtractTextPlugin.extract({
         fallback: 'style-loader',
         use: [
