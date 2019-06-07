@@ -1,6 +1,7 @@
 import 'axios';
 import 'classnames';
 import 'lodash';
+import 'moment';
 import 'prop-types';
 import 'react';
 import 'react-dom';
@@ -15,3 +16,4 @@ import 'semantic-ui-react';
 import 'shortid';
 import 'styled-components';
 import 'uuid';
+import 'yup';

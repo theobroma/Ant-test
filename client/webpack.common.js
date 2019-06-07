@@ -15,7 +15,7 @@ config.output = {
 };
 
 config.resolve = {
-  extensions: ['.js', '.jsx', '.json', '.scss', '.css', '.jpeg', '.jpg', '.gif', '.png'],
+  extensions: ['.js', '.jsx', '.json', '.scss', '.css', '.jpeg', '.jpg', '.gif', '.png', '.svg'],
   alias: {
     images: path.resolve(__dirname, 'src/app/assets/images'),
   },
