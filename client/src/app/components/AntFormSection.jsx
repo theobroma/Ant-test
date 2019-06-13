@@ -3,7 +3,7 @@ import React from 'react';
 import { Form, Icon, Input, Button, Checkbox } from 'antd';
 
 class AntFormSection extends React.Component {
-  handleSubmit = e => {
+  handleSubmit = (e) => {
     e.preventDefault();
     this.props.form.validateFields((err, values) => {
       if (!err) {
@@ -23,7 +23,7 @@ class AntFormSection extends React.Component {
             <Input
               prefix={<Icon type="user" style={{ color: 'rgba(0,0,0,.25)' }} />}
               placeholder="Username"
-            />
+            />,
           )}
         </Form.Item>
         <Form.Item>
@@ -34,7 +34,7 @@ class AntFormSection extends React.Component {
               prefix={<Icon type="lock" style={{ color: 'rgba(0,0,0,.25)' }} />}
               type="password"
               placeholder="Password"
-            />
+            />,
           )}
         </Form.Item>
         <Form.Item>

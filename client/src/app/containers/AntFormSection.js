@@ -14,17 +14,17 @@ class FormSection extends React.PureComponent {
   }
 }
 
-const mapStateToProps = state => {
+const mapStateToProps = (state) => {
   return {
     users: state.users,
   };
 };
 
-const mapDispatchToProps = dispatch => ({
-  addUser: user => dispatch(addUser(user)),
+const mapDispatchToProps = (dispatch) => ({
+  addUser: (user) => dispatch(addUser(user)),
 });
 
 export default connect(
   mapStateToProps,
-  mapDispatchToProps
+  mapDispatchToProps,
 )(FormSection);

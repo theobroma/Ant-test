@@ -17,9 +17,9 @@ const mapStateToProps = (state, props) => {
   return {};
 };
 
-const mapDispatchToProps = dispatch => ({ removeUser: id => dispatch(removeUser(id)) });
+const mapDispatchToProps = (dispatch) => ({ removeUser: (id) => dispatch(removeUser(id)) });
 
 export default connect(
   mapStateToProps,
-  mapDispatchToProps
+  mapDispatchToProps,
 )(TableRow);
