@@ -4,9 +4,10 @@ import { createLogger } from 'redux-logger';
 import throttle from 'lodash/throttle';
 import { composeWithDevTools } from 'redux-devtools-extension';
 import { loadState, saveState } from './helpers/localStorage';
-import rootReducer from './reducer';
+import rootReducer from './reducers';
 //mock data
 import MOCK_DATA from './helpers/MOCK_DATA.json';
+import TICKETS_MOCK_DATA from './helpers/TICKETS_MOCK_DATA.json';
 
 const configureStore = () => {
   const persistedState = loadState();
@@ -15,8 +16,13 @@ const configureStore = () => {
     users: {
       data: MOCK_DATA,
       pending: false,
-      errorMessage: ''
-    }
+      errorMessage: '',
+    },
+    tickets: {
+      data: TICKETS_MOCK_DATA.tickets,
+      pending: false,
+      errorMessage: '',
+    },
   };
   // if persistedState is not empty then assign parsed persistedState to initState
   if (persistedState) {
@@ -24,7 +30,7 @@ const configureStore = () => {
   }
 
   const logger = createLogger({
-    collapsed: true
+    collapsed: true,
   });
 
   const middlewares = [thunk, logger];
@@ -36,14 +42,14 @@ const configureStore = () => {
   const store = createStore(
     rootReducer,
     totalInitialState,
-    composeEnhancers(applyMiddleware(...middlewares))
+    composeEnhancers(applyMiddleware(...middlewares)),
   );
 
   store.subscribe(
     throttle(() => {
       console.log('saved to localStorage');
       saveState(store.getState());
-    }, 1000)
+    }, 1000),
   );
 
   return store;
