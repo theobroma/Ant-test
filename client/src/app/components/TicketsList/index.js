@@ -1,8 +1,14 @@
 import React from 'react';
 import PropTypes from 'prop-types';
+import TicketCard from './TicketCard';
 
 const TicketsList = (props) => {
-  return <div>TicketList</div>;
+  console.log(props);
+  return (
+    <div>
+      <TicketCard />
+    </div>
+  );
 };
 
 TicketsList.propTypes = {};

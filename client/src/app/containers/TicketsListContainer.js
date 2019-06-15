@@ -19,6 +19,7 @@ class TicketsList extends React.PureComponent {
 
 const mapStateToProps = (state) => ({
   //   currentUser: getCurrentUser(state),
+  tickets: state.tickets.data,
 });
 
 const mapDispatchToProps = {
