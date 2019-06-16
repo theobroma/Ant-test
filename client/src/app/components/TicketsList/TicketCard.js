@@ -22,8 +22,15 @@ const TicketCard = (props) => {
   return (
     <StyledTicketCard>
       <Row>
-        <Col md={8}>col1</Col>
-        <Col md={16}>col2</Col>
+        <Col md={8} className="border-md-right">
+          <div className="pa3">
+            col1
+            <Button type="primary">Primary</Button>
+          </div>
+        </Col>
+        <Col md={16}>
+          <div className="pa3">col2</div>
+        </Col>
       </Row>
     </StyledTicketCard>
   );

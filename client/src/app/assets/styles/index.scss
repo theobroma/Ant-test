@@ -3,3 +3,14 @@
 
 // Local
 @import 'grid';
+
+#root {
+  background: #f3f7fa;
+  height: 100%;
+}
+
+@media (min-width: 768px) {
+  .border-md-right {
+    border-right: 1px solid #eceff1;
+  }
+}

@@ -4,7 +4,8 @@ import { Row, Col, Form, Icon, Input, Button, Checkbox, Radio } from 'antd';
 import logo from 'assets/images/Logo.png';
 // import TableSection from 'containers/TableSection';
 // import FormSection from 'containers/FormSection';
-import AntFormSection from 'containers/AntFormSection';
+// import AntFormSection from 'containers/AntFormSection';
+import TicketsFilterContainer from 'containers/TicketsFilterContainer';
 import TicketsListContainer from 'containers/TicketsListContainer';
 
 export default class MainApp extends React.Component {
@@ -18,9 +19,11 @@ export default class MainApp extends React.Component {
             </div>
           </Col>
         </Row>
-        <Row>
-          <Col md={8}>filter</Col>
-          <Col md={16}>
+        <Row gutter={16}>
+          <Col md={8} className="mb3">
+            <TicketsFilterContainer />
+          </Col>
+          <Col md={16} className="mb3">
             <TicketsListContainer />
           </Col>
         </Row>
