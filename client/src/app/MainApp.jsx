@@ -13,7 +13,7 @@ export default class MainApp extends React.Component {
       <div className="container">
         <Row>
           <Col md={24}>
-            <div className="logo">
+            <div className="flex justify-center pa4">
               <img src={logo} />
             </div>
           </Col>

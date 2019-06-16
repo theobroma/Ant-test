@@ -56,3 +56,6 @@ $screen-xl-max: ($screen-xxl-min - 1px);
 @include make-container($screen-xl-min, $screen-xl);
 @include make-container($screen-xxl-min, $screen-xxl); // Optional
 /*==================================================================*/
+.w-100 {
+  width: 100% !important;
+}

@@ -55,6 +55,8 @@
     "shortid": "^2.2.14",
     "style-loader": "^0.21.0",
     "styled-components": "^4.2.0",
+    "tachyons-flexbox": "^2.1.1",
+    "tachyons-spacing": "^6.0.5",
     "uglifyjs-webpack-plugin": "^1.2.7",
     "uuid": "^3.2.1",
     "validatorjs": "^3.14.2",
