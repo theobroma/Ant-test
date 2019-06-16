@@ -36,6 +36,7 @@ $screen-xl-max: ($screen-xxl-min - 1px);
 .container {
   width: 100%;
   display: flex;
+  flex-direction: column;
   align-self: center;
   margin: auto;
 }
@@ -55,7 +56,3 @@ $screen-xl-max: ($screen-xxl-min - 1px);
 @include make-container($screen-xl-min, $screen-xl);
 @include make-container($screen-xxl-min, $screen-xxl); // Optional
 /*==================================================================*/
-// extend ant-row
-.ant-row {
-  width: 100%;
-}

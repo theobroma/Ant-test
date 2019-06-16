@@ -50,6 +50,7 @@ config.module = {
       loaders: [
         'file-loader?context=src/app/assets/images/&name=images/[path][name].[ext]',
         {
+          // TODO: remove it to prod build
           // images loader
           loader: 'image-webpack-loader',
           query: {

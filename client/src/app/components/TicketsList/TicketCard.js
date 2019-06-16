@@ -1,5 +1,9 @@
 import React from 'react';
 import PropTypes from 'prop-types';
+// import { Card } from 'antd';
+import { Row, Col, Form, Icon, Input, Button, Checkbox, Radio } from 'antd';
+
+import StyledTicketCard from './TicketCard.styled';
 
 const TicketCard = (props) => {
   const {
@@ -15,7 +19,14 @@ const TicketCard = (props) => {
     price,
     stops,
   } = props;
-  return <div>TicketCard</div>;
+  return (
+    <StyledTicketCard>
+      <Row>
+        <Col md={8}>col1</Col>
+        <Col md={16}>col2</Col>
+      </Row>
+    </StyledTicketCard>
+  );
 };
 
 TicketCard.propTypes = {};
