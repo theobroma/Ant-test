@@ -6,5 +6,16 @@ const StyledTicketCard = styled.div`
   color: #4a4a4a;
   background-color: #fff;
   box-shadow: 0 4px 12px 0 rgba(91, 137, 164, 0.2);
+  .time {
+    color: #4a4a4a;
+    font-size: 32px;
+  }
+  .airlines-logo {
+    height: 80px;
+    img {
+      max-width: 100%;
+      height: auto;
+    }
+  }
 `;
 export default StyledTicketCard;
