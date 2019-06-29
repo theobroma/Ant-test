@@ -3,6 +3,7 @@ import PropTypes from 'prop-types';
 // import { Card } from 'antd';
 import { Row, Col, Form, Icon, Input, Button, Checkbox, Radio } from 'antd';
 import { format, getDay } from 'date-fns';
+import dayOfTheWeek from 'helpers/dayOfTheWeek';
 import turkishImg from 'assets/images/turkish-airlines.jpg';
 
 import StyledTicketCard from './TicketCard.styled';
@@ -40,7 +41,7 @@ const TicketCard = (props) => {
           <div className="pa3">
             <Row>
               <Col md={8}>
-                <div className="time">{arrival_time}</div>
+                <div className="time">{departure_time}</div>
               </Col>
               <Col md={8} className="flex items-center">
                 <div className="flex flex-column items-center">
@@ -49,7 +50,7 @@ const TicketCard = (props) => {
                 </div>
               </Col>
               <Col md={8}>
-                <div className="time">{departure_time}</div>
+                <div className="time">{arrival_time}</div>
               </Col>
             </Row>
             {/* row2 */}
@@ -60,7 +61,7 @@ const TicketCard = (props) => {
                     {origin}, {origin_name}
                   </div>
                   <div className="f-10 color-balihai os-semibold">
-                    {format(departure_date, 'DD MMM YYYY')},{getDay(departure_date)}
+                    {format(departure_date, 'DD MMM YYYY')},{dayOfTheWeek(departure_date)}
                   </div>
                 </div>
               </Col>
@@ -72,7 +73,9 @@ const TicketCard = (props) => {
                   <div className="f-10 color-charcoal os-semibold">
                     {destination}, {destination_name}
                   </div>
-                  <div className="f-10 color-balihai os-semibold">{departure_date}</div>
+                  <div className="f-10 color-balihai os-semibold">
+                    {format(arrival_date, 'DD MMM YYYY')},{dayOfTheWeek(arrival_date)}
+                  </div>
                 </div>
               </Col>
             </Row>

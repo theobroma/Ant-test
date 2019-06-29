@@ -15,7 +15,7 @@ const StyledTicketCard = styled.div`
     height: 80px;
     img {
       max-width: 100%;
-      height: auto;
+      height: 80px;
     }
   }
 `;
