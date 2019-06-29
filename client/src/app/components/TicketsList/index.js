@@ -3,12 +3,11 @@ import PropTypes from 'prop-types';
 import TicketCard from './TicketCard';
 
 const TicketsList = (props) => {
-  console.log(props);
-  return (
-    <div>
-      <TicketCard />
-    </div>
-  );
+  const { tickets } = props;
+
+  const renderTickets = () => tickets.map((ticket) => <TicketCard {...ticket} />);
+
+  return <div>{renderTickets()}</div>;
 };
 
 TicketsList.propTypes = {};
