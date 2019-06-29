@@ -22,7 +22,6 @@ const TicketCard = (props) => {
     price,
     stops,
   } = props;
-  console.log(props);
   return (
     <StyledTicketCard>
       <Row>
@@ -86,6 +85,18 @@ const TicketCard = (props) => {
   );
 };
 
-TicketCard.propTypes = {};
+TicketCard.propTypes = {
+  arrival_date: PropTypes.string,
+  arrival_timee: PropTypes.string,
+  carrier: PropTypes.string,
+  departure_date: PropTypes.string,
+  departure_time: PropTypes.string,
+  destination: PropTypes.string,
+  destination_name: PropTypes.string,
+  origin: PropTypes.string,
+  origin_name: PropTypes.string,
+  price: PropTypes.number,
+  stops: PropTypes.number,
+};
 
 export default TicketCard;

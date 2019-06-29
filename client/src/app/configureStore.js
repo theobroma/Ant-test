@@ -8,6 +8,7 @@ import rootReducer from './reducers';
 //mock data
 import MOCK_DATA from './helpers/MOCK_DATA.json';
 import TICKETS_MOCK_DATA from './helpers/TICKETS_MOCK_DATA.json';
+import CURRENCY_MOCK_DATA from './helpers/CURRENCY_MOCK_DATA.json';
 
 const configureStore = () => {
   const persistedState = loadState();
@@ -20,6 +21,11 @@ const configureStore = () => {
     },
     tickets: {
       data: TICKETS_MOCK_DATA.tickets,
+      pending: false,
+      errorMessage: '',
+    },
+    currency: {
+      data: CURRENCY_MOCK_DATA,
       pending: false,
       errorMessage: '',
     },
