@@ -6,6 +6,8 @@ import './assets/styles/index.scss';
 import MainApp from './MainApp';
 import configureStore from './configureStore';
 
+window.__localeId__ = 'ru';
+
 const store = configureStore();
 render(
   <Provider store={store}>

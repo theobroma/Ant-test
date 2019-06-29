@@ -2,7 +2,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 // import { Card } from 'antd';
 import { Row, Col, Form, Icon, Input, Button, Checkbox, Radio } from 'antd';
-import { format, getDay } from 'date-fns';
+import format from 'helpers/format';
 import dayOfTheWeek from 'helpers/dayOfTheWeek';
 import turkishImg from 'assets/images/turkish-airlines.jpg';
 
