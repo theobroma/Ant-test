@@ -21,7 +21,12 @@ const TicketCard = (props) => {
     origin_name,
     price,
     stops,
+    currency,
+    filter,
   } = props;
+  console.log(props);
+
+  console.log(currency[0].purchaseRateNB);
   return (
     <StyledTicketCard>
       <Row>
@@ -31,8 +36,9 @@ const TicketCard = (props) => {
               <img src="/images/turkish-airlines.jpg" alt="turkish-airlines" />
             </div>
             <Button type="primary" className="f-18 color-white os-semibold w-100">
-              Купить <br />
-              за {price}
+              Купить за <br />
+              {Math.ceil(price / currency[0].purchaseRateNB)}
+              <span className="ml2">{filter.currency}</span>
             </Button>
           </div>
         </Col>

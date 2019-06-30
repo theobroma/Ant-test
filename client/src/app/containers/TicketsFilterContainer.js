@@ -22,6 +22,7 @@ const mapStateToProps = (state) => ({
   //   currentUser: getCurrentUser(state),
   tickets: state.tickets.data,
   filter: state.filter,
+  // currency: state.currency.data.exchangeRate,
 });
 
 const mapDispatchToProps = {
