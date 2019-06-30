@@ -20,6 +20,7 @@ class TicketsFilter extends React.Component {
 
   handleCurrencyChange = (e) => {
     this.setState({ currency: e.target.value });
+    this.props.setCurrency(e.target.value);
   };
 
   onChange = (checkedList) => {
@@ -39,13 +40,13 @@ class TicketsFilter extends React.Component {
   };
 
   render() {
-    const { currency } = this.state;
+    // const { currency } = this.state;
     return (
       <StyledTicketsFilter>
         <div className="pa3">
           <div className="form-group">
             <label class="control-label">Валюта</label>
-            <Radio.Group value={currency} onChange={this.handleCurrencyChange}>
+            <Radio.Group value={this.props.filter.currency} onChange={this.handleCurrencyChange}>
               <Radio.Button value="UAH">UAH</Radio.Button>
               <Radio.Button value="USD">USD</Radio.Button>
               <Radio.Button value="EUR">EUR</Radio.Button>
