@@ -2,19 +2,13 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import _ from 'lodash';
 import { Button, Radio, Checkbox, Icon } from 'antd';
+import { EnumsMap } from 'constants/enums/Enums';
+import { STOPS_COUNT_TYPE } from 'constants/enums/EnumsNames';
 import StyledTicketsFilter from './TicketsFilter.styled';
 
 const CheckboxGroup = Checkbox.Group;
 
-// const plainOptions = ['Без пересадок', '1 пересадка', '2 пересадки', '3 пересадки'];
-// const defaultCheckedList = ['Без пересадок'];
-
-const plainOptions = [
-  { label: 'Без пересадок', value: 0 },
-  { label: '1 пересадка', value: 1 },
-  { label: '2 пересадки', value: 2 },
-  { label: '3 пересадки', value: 3 },
-];
+const plainOptions = EnumsMap[STOPS_COUNT_TYPE];
 
 const plainOptionsValuesArr = plainOptions.map((obj) => {
   return Object.values(_.pick(obj, ['value']));
