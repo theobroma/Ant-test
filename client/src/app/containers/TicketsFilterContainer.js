@@ -2,7 +2,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
 import TicketsFilterComponent from 'components/TicketsFilter';
-import { setCurrency } from 'actions/filter';
+import { setCurrency, setStops } from 'actions/filter';
 
 class TicketsFilter extends React.PureComponent {
   static propTypes = {
@@ -28,6 +28,7 @@ const mapStateToProps = (state) => ({
 const mapDispatchToProps = {
   // getTranslation
   setCurrency,
+  setStops,
 };
 
 export default connect(

@@ -1,4 +1,4 @@
-import { SET_CURRENCY } from 'constants/actions';
+import { SET_CURRENCY, SET_STOPS } from 'constants/actions';
 
 export const initialState = {
   currency: 'UAH',
@@ -6,10 +6,12 @@ export const initialState = {
 };
 
 function filter(state = initialState, action) {
-  const { type, currency } = action;
+  const { type, currency, stops } = action;
   switch (type) {
     case SET_CURRENCY:
       return { ...state, currency: currency };
+    case SET_STOPS:
+      return { ...state, stops: stops };
     default:
       return state;
   }

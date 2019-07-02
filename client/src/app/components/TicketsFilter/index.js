@@ -41,6 +41,7 @@ class TicketsFilter extends React.Component {
       () => {
         // console.log(this.state);
         // console.log(checkedList.length);
+        this.props.setStops(this.state.checkedList);
       },
     );
   };
@@ -54,6 +55,7 @@ class TicketsFilter extends React.Component {
       },
       () => {
         console.log(this.state);
+        this.props.setStops(this.state.checkedList);
       },
     );
   };
