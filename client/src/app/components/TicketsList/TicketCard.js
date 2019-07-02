@@ -24,9 +24,9 @@ const TicketCard = (props) => {
     currency,
     filter,
   } = props;
-  console.log(props);
+  // console.log(props);
 
-  console.log(currency[0].purchaseRateNB);
+  // console.log(currency[0].purchaseRateNB);
   return (
     <StyledTicketCard>
       <Row>

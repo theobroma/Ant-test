@@ -1,12 +1,26 @@
 import React from 'react';
 import PropTypes from 'prop-types';
+import _ from 'lodash';
 import { Button, Radio, Checkbox, Icon } from 'antd';
 import StyledTicketsFilter from './TicketsFilter.styled';
 
 const CheckboxGroup = Checkbox.Group;
 
-const plainOptions = ['Без пересадок', '1 пересадка', '2 пересадки', '3 пересадки'];
-const defaultCheckedList = ['Без пересадок'];
+// const plainOptions = ['Без пересадок', '1 пересадка', '2 пересадки', '3 пересадки'];
+// const defaultCheckedList = ['Без пересадок'];
+
+const plainOptions = [
+  { label: 'Без пересадок', value: 0 },
+  { label: '1 пересадка', value: 1 },
+  { label: '2 пересадки', value: 2 },
+  { label: '3 пересадки', value: 3 },
+];
+
+const plainOptionsValuesArr = plainOptions.map((obj) => {
+  return Object.values(_.pick(obj, ['value']));
+});
+const plainOptionsValues = _.flatten(plainOptionsValuesArr);
+const defaultCheckedList = [{ label: 'Без пересадок', value: 0 }];
 
 class TicketsFilter extends React.Component {
   state = {
@@ -24,19 +38,30 @@ class TicketsFilter extends React.Component {
   };
 
   onChange = (checkedList) => {
-    this.setState({
-      checkedList,
-      indeterminate: !!checkedList.length && checkedList.length < plainOptions.length,
-      checkAll: checkedList.length === plainOptions.length,
-    });
+    this.setState(
+      {
+        checkedList,
+        indeterminate: !!checkedList.length && checkedList.length < plainOptions.length,
+        checkAll: checkedList.length === plainOptions.length,
+      },
+      () => {
+        // console.log(this.state);
+        // console.log(checkedList.length);
+      },
+    );
   };
 
   onCheckAllChange = (e) => {
-    this.setState({
-      checkedList: e.target.checked ? plainOptions : [],
-      indeterminate: false,
-      checkAll: e.target.checked,
-    });
+    this.setState(
+      {
+        checkedList: e.target.checked ? plainOptionsValues : [],
+        indeterminate: false,
+        checkAll: e.target.checked,
+      },
+      () => {
+        console.log(this.state);
+      },
+    );
   };
 
   render() {
