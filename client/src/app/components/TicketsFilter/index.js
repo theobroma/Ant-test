@@ -14,7 +14,7 @@ const plainOptionsValuesArr = plainOptions.map((obj) => {
   return Object.values(_.pick(obj, ['value']));
 });
 const plainOptionsValues = _.flatten(plainOptionsValuesArr);
-const defaultCheckedList = [{ label: 'Без пересадок', value: 0 }];
+const defaultCheckedList = [0, 1];
 
 class TicketsFilter extends React.Component {
   state = {

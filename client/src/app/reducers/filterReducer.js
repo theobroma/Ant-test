@@ -2,6 +2,7 @@ import { SET_CURRENCY } from 'constants/actions';
 
 export const initialState = {
   currency: 'UAH',
+  stops: [3],
 };
 
 function filter(state = initialState, action) {
