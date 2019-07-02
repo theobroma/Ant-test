@@ -1,5 +1,6 @@
-import React from 'react';
+import React, { Fragment } from 'react';
 import PropTypes from 'prop-types';
+import { Row, Col, Form, Icon, Input, Button, Checkbox, Radio } from 'antd';
 import TicketCard from './TicketCard';
 
 const TicketsList = (props) => {
@@ -12,7 +13,17 @@ const TicketsList = (props) => {
   const renderTickets = () =>
     filteredTickets.map((ticket) => <TicketCard {...ticket} {...props} />);
 
-  return <div>{renderTickets()}</div>;
+  return (
+    <Fragment>
+      <Row>
+        <Col md={16}>{/* TODO sort */}</Col>
+        <Col md={8} className="flex justify-end">
+          <div>Количество :{filteredTickets.length}</div>
+        </Col>
+      </Row>
+      {renderTickets()}
+    </Fragment>
+  );
 };
 
 TicketsList.propTypes = {};

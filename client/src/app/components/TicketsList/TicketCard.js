@@ -24,9 +24,21 @@ const TicketCard = (props) => {
     currency,
     filter,
   } = props;
-  // console.log(props);
 
-  // console.log(currency[0].purchaseRateNB);
+  const renderStops = (stops) => {
+    if (stops === 0) {
+      return `Без пересадок`;
+    }
+    if (stops === 1) {
+      return `1 пересадка`;
+    }
+    if (stops === 2 || stops === 3 || stops === 4) {
+      return `${stops} пересадки`;
+    } else {
+      return `${stops} пересадок`;
+    }
+  };
+
   return (
     <StyledTicketCard>
       <Row>
@@ -50,7 +62,7 @@ const TicketCard = (props) => {
               </Col>
               <Col md={8} className="flex items-center">
                 <div className="flex flex-column items-center">
-                  <div className="f-10 color-balihai os-semibold">{stops} пересадки</div>
+                  <div className="f-10 color-balihai os-semibold">{renderStops(stops)}</div>
                   ------------------->
                 </div>
               </Col>
