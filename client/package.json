@@ -9,7 +9,8 @@
     "build:stats": "webpack --env production --profile --progress --json > stats.json",
     "build": "npm run clean && npm run build:prod",
     "build:prod": "webpack --mode production --config webpack.prod.js",
-    "clean": "rimraf ./dist"
+    "clean": "rimraf ./dist",
+    "lint-js": "eslint --ignore-path .eslintignore --ignore-pattern \"!**/.*\" ."
   },
   "dependencies": {
     "antd": "^3.19.2",
@@ -49,7 +50,7 @@
     "redux": "^3.7.2",
     "redux-devtools-extension": "^2.13.2",
     "redux-logger": "^3.0.6",
-    "redux-saga": "^1.0.3",
+    "redux-saga": "^1.0.5",
     "redux-thunk": "^2.3.0",
     "reselect": "^4.0.0",
     "sass-loader": "^7.0.3",
@@ -81,14 +82,16 @@
     "babel-preset-env": "^1.7.0",
     "babel-preset-react": "^6.24.1",
     "babel-preset-stage-0": "^6.24.1",
-    "eslint": "4.x",
+    "eslint": "^6.0.1",
     "eslint-config-airbnb": "^17.0.0",
     "eslint-config-airbnb-base": "^13.0.0",
     "eslint-config-prettier": "^2.9.0",
+    "eslint-import-resolver-webpack": "^0.11.1",
     "eslint-loader": "^2.1.0",
     "eslint-plugin-babel": "^5.1.0",
     "eslint-plugin-import": "^2.13.0",
     "eslint-plugin-jsx-a11y": "6.1.1",
+    "eslint-plugin-prettier": "^3.1.0",
     "eslint-plugin-react": "^7.10.0",
     "eslint-plugin-redux-saga": "^0.9.0",
     "prettier": "^1.12.1"
