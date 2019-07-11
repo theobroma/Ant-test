@@ -1,6 +1,7 @@
 import React, { Fragment } from 'react';
 import PropTypes from 'prop-types';
 import { Row, Col, Form, Icon, Input, Button, Checkbox, Radio } from 'antd';
+import shortid from 'shortid';
 import TicketCard from './TicketCard';
 
 const TicketsList = (props) => {
@@ -11,7 +12,7 @@ const TicketsList = (props) => {
   });
 
   const renderTickets = () =>
-    filteredTickets.map((ticket) => <TicketCard {...ticket} {...props} />);
+    filteredTickets.map((ticket) => <TicketCard key={shortid.generate()} {...ticket} {...props} />);
 
   return (
     <Fragment>

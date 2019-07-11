@@ -66,7 +66,7 @@ class TicketsFilter extends React.Component {
       <StyledTicketsFilter>
         <div className="pa3">
           <div className="form-group">
-            <label class="control-label">Валюта</label>
+            <label className="control-label">Валюта</label>
             <Radio.Group value={this.props.filter.currency} onChange={this.handleCurrencyChange}>
               <Radio.Button value="UAH">UAH</Radio.Button>
               <Radio.Button value="USD">USD</Radio.Button>
@@ -75,7 +75,7 @@ class TicketsFilter extends React.Component {
           </div>
           {/* checkbox */}
           <div className="form-group">
-            <label class="control-label">Количество пересадок</label>
+            <label className="control-label">Количество пересадок</label>
             <Checkbox
               indeterminate={this.state.indeterminate}
               onChange={this.onCheckAllChange}

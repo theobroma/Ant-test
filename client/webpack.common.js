@@ -1,4 +1,3 @@
-'use strict';
 const webpack = require('webpack');
 const path = require('path');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
@@ -7,10 +6,10 @@ const CopyWebpackPlugin = require('copy-webpack-plugin');
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 
 const config = {};
-config.entry = __dirname + '/src/app/app.jsx';
+config.entry = `${__dirname}/src/app/app.jsx`;
 
 config.output = {
-  path: __dirname + '/dist',
+  path: `${__dirname}/dist`,
   // filename: '[name].[hash].js',
   filename: '[name].js',
 };
@@ -90,10 +89,10 @@ config.module = {
   ],
 };
 
-config.externals = {
-  react: 'React',
-  'react-dom': 'ReactDOM',
-};
+// config.externals = {
+//   react: 'React',
+//   'react-dom': 'ReactDOM',
+// };
 
 config.performance = {
   hints: false,
@@ -109,12 +108,12 @@ config.optimization = {
 
 config.plugins = [
   new HtmlWebpackPlugin({
-    template: __dirname + '/src/public/index.html',
+    template: `${__dirname}/src/public/index.html`,
     inject: 'body',
   }),
   new CopyWebpackPlugin([
     {
-      from: __dirname + '/src/public',
+      from: `${__dirname}/src/public`,
     },
   ]),
   // new ExtractTextPlugin({ filename: 'css/[name].css' }),
