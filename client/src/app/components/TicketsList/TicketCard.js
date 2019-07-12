@@ -3,23 +3,26 @@ import PropTypes from 'prop-types';
 import { Row, Col, Button } from 'antd';
 import format from 'helpers/format';
 import dayOfTheWeek from 'helpers/dayOfTheWeek';
+import { filterShape, currencyShape, ticketShape } from 'types';
 // import turkishImg from 'assets/images/turkish-airlines.jpg';
 
 import StyledTicketCard from './TicketCard.styled';
 
 const TicketCard = (props) => {
   const {
-    arrival_date,
-    arrival_time,
-    // carrier,
-    departure_date,
-    departure_time,
-    destination,
-    destination_name,
-    origin,
-    origin_name,
-    price,
-    stops,
+    ticket: {
+      arrival_date,
+      arrival_time,
+      // carrier,
+      departure_date,
+      departure_time,
+      destination,
+      destination_name,
+      origin,
+      origin_name,
+      price,
+      stops,
+    },
     currency,
     filter,
   } = props;
@@ -102,29 +105,9 @@ const TicketCard = (props) => {
 };
 
 TicketCard.propTypes = {
-  arrival_date: PropTypes.string,
-  arrival_time: PropTypes.string,
-  // carrier: PropTypes.string,
-  departure_date: PropTypes.string,
-  departure_time: PropTypes.string,
-  destination: PropTypes.string,
-  destination_name: PropTypes.string,
-  origin: PropTypes.string,
-  origin_name: PropTypes.string,
-  price: PropTypes.number,
-  stops: PropTypes.number,
-  currency: PropTypes.arrayOf(
-    PropTypes.shape({
-      baseCurrency: PropTypes.string,
-      currency: PropTypes.string,
-      purchaseRateNB: PropTypes.number,
-      saleRateNB: PropTypes.number,
-    }),
-  ),
-  filter: PropTypes.shape({
-    currency: PropTypes.string,
-    stops: PropTypes.arrayOf(PropTypes.number),
-  }),
+  ticket: ticketShape,
+  currency: currencyShape,
+  filter: filterShape,
 };
 
 export default TicketCard;

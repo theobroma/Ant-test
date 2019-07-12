@@ -1,7 +1,8 @@
 import React, { Fragment } from 'react';
 import PropTypes from 'prop-types';
-import { Row, Col, Form, Icon, Input, Button, Checkbox, Radio } from 'antd';
+import { Row, Col } from 'antd';
 import shortid from 'shortid';
+import { filterShape, ticketShape } from 'types';
 import TicketCard from './TicketCard';
 
 const TicketsList = (props) => {
@@ -12,12 +13,14 @@ const TicketsList = (props) => {
   });
 
   const renderTickets = () =>
-    filteredTickets.map((ticket) => <TicketCard key={shortid.generate()} {...ticket} {...props} />);
+    filteredTickets.map((ticket) => (
+      <TicketCard key={shortid.generate()} ticket={ticket} {...props} />
+    ));
 
   return (
     <Fragment>
       <Row>
-        <Col md={16}>{/* TODO sort */}</Col>
+        <Col md={16}>{/* TODO: sort */}</Col>
         <Col md={8} className="flex justify-end">
           <div>Количество :{filteredTickets.length}</div>
         </Col>
@@ -27,6 +30,9 @@ const TicketsList = (props) => {
   );
 };
 
-TicketsList.propTypes = {};
+TicketsList.propTypes = {
+  tickets: PropTypes.arrayOf(ticketShape),
+  filter: filterShape,
+};
 
 export default TicketsList;
