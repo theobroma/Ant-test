@@ -1,10 +1,9 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-// import { Card } from 'antd';
-import { Row, Col, Form, Icon, Input, Button, Checkbox, Radio } from 'antd';
+import { Row, Col, Button } from 'antd';
 import format from 'helpers/format';
 import dayOfTheWeek from 'helpers/dayOfTheWeek';
-import turkishImg from 'assets/images/turkish-airlines.jpg';
+// import turkishImg from 'assets/images/turkish-airlines.jpg';
 
 import StyledTicketCard from './TicketCard.styled';
 
@@ -12,7 +11,7 @@ const TicketCard = (props) => {
   const {
     arrival_date,
     arrival_time,
-    carrier,
+    // carrier,
     departure_date,
     departure_time,
     destination,
@@ -25,18 +24,17 @@ const TicketCard = (props) => {
     filter,
   } = props;
 
-  const renderStops = (stops) => {
-    if (stops === 0) {
+  const renderStops = (val) => {
+    if (val === 0) {
       return `Без пересадок`;
     }
-    if (stops === 1) {
+    if (val === 1) {
       return `1 пересадка`;
     }
-    if (stops === 2 || stops === 3 || stops === 4) {
-      return `${stops} пересадки`;
-    } else {
-      return `${stops} пересадок`;
+    if (val === 2 || val === 3 || val === 4) {
+      return `${val} пересадки`;
     }
+    return `${val} пересадок`;
   };
 
   return (
@@ -63,7 +61,7 @@ const TicketCard = (props) => {
               <Col md={8} className="flex items-center">
                 <div className="flex flex-column items-center">
                   <div className="f-10 color-balihai os-semibold">{renderStops(stops)}</div>
-                  ------------------->
+                  ===============
                 </div>
               </Col>
               <Col md={8}>
@@ -105,8 +103,8 @@ const TicketCard = (props) => {
 
 TicketCard.propTypes = {
   arrival_date: PropTypes.string,
-  arrival_timee: PropTypes.string,
-  carrier: PropTypes.string,
+  arrival_time: PropTypes.string,
+  // carrier: PropTypes.string,
   departure_date: PropTypes.string,
   departure_time: PropTypes.string,
   destination: PropTypes.string,
@@ -115,6 +113,18 @@ TicketCard.propTypes = {
   origin_name: PropTypes.string,
   price: PropTypes.number,
   stops: PropTypes.number,
+  currency: PropTypes.arrayOf(
+    PropTypes.shape({
+      baseCurrency: PropTypes.string,
+      currency: PropTypes.string,
+      purchaseRateNB: PropTypes.number,
+      saleRateNB: PropTypes.number,
+    }),
+  ),
+  filter: PropTypes.shape({
+    currency: PropTypes.string,
+    stops: PropTypes.arrayOf(PropTypes.number),
+  }),
 };
 
 export default TicketCard;
