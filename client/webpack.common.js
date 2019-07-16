@@ -43,6 +43,12 @@ config.module = {
       exclude: /node_modules/,
     },
     // {
+    //   test: /\.jsx?$/,
+    //   exclude: /node_modules/,
+    //   use: ['babel-loader', 'eslint-loader'],
+    // },
+    // ======================================================
+    // {
     //   test: /\.(sass|scss|css)$/,
     //   use: ExtractTextPlugin.extract({
     //     fallback: 'style-loader',
@@ -58,6 +64,7 @@ config.module = {
       test: /\.(sass|scss|css)$/,
       use: [MiniCssExtractPlugin.loader, 'css-loader', 'postcss-loader', 'sass-loader'],
     },
+    // ======================================================
     {
       test: /\.(jpe?g|png|gif|svg)$/i,
       loaders: [
