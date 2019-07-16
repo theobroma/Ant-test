@@ -1,5 +1,5 @@
-const webpack = require('webpack');
-const path = require('path');
+const webpack = require('webpack'); // eslint-disable-line
+const path = require('path'); // eslint-disable-line
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const CopyWebpackPlugin = require('copy-webpack-plugin');
 // const ExtractTextPlugin = require('extract-text-webpack-plugin');
@@ -18,7 +18,16 @@ config.resolve = {
   extensions: ['.js', '.jsx', '.json', '.scss', '.css', '.jpeg', '.jpg', '.gif', '.png', '.svg'],
   alias: {
     images: path.resolve(__dirname, 'src/app/assets/images'),
+    types: path.resolve(__dirname, 'src/app/types'),
+    components: path.resolve(__dirname, 'src/app/components'),
+    containers: path.resolve(__dirname, 'src/app/containers'),
+    actions: path.resolve(__dirname, 'src/app/actions'),
+    reducers: path.resolve(__dirname, 'src/app/reducers'),
+    constants: path.resolve(__dirname, 'src/app/constants'),
+    helpers: path.resolve(__dirname, 'src/app/helpers'),
+    api: path.resolve(__dirname, 'src/app/api'),
   },
+  modules: [path.resolve(__dirname), 'node_modules'],
 };
 
 config.module = {
