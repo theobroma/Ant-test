@@ -3,6 +3,9 @@
   "version": "1.0.0",
   "description": "test antd design",
   "main": "index.js",
+  "browserslist": [
+    "defaults"
+  ],
   "scripts": {
     "start": "npm run clean && npm run dll && npm run dev",
     "dll": "webpack --config webpack.dll.js --progress --colors --inline",
@@ -77,6 +80,7 @@
     "@babel/plugin-transform-runtime": "^7.5.0",
     "@babel/preset-env": "^7.5.4",
     "@babel/preset-react": "^7.0.0",
+    "autoprefixer": "^9.6.1",
     "babel-eslint": "^10.0.2",
     "babel-loader": "^8.0.6",
     "babel-plugin-styled-components": "^1.10.6",
