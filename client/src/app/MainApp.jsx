@@ -1,7 +1,7 @@
 import React from 'react';
 import { Row, Col, Form, Icon, Input, Button, Checkbox, Radio } from 'antd';
 
-import logo from 'assets/images/Logo.png';
+import logo from 'images/Logo.png';
 // import TableSection from 'containers/TableSection';
 // import FormSection from 'containers/FormSection';
 // import AntFormSection from 'containers/AntFormSection';

@@ -4,7 +4,7 @@ import { Row, Col, Button } from 'antd';
 import format from 'helpers/format';
 import dayOfTheWeek from 'helpers/dayOfTheWeek';
 import { filterShape, currencyShape, ticketShape } from 'types';
-// import turkishImg from 'assets/images/turkish-airlines.jpg';
+import TurkishImg from 'images/turkish-airlines.jpg';
 
 import StyledTicketCard from './TicketCard.styled';
 
@@ -46,7 +46,7 @@ const TicketCard = (props) => {
         <Col md={8} className="border-md-right">
           <div className="flex flex-column items-center pa3">
             <div className="airlines-logo">
-              <img src="/images/turkish-airlines.jpg" alt="turkish-airlines" />
+              <img src={TurkishImg} alt="turkish-airlines" />
             </div>
             <Button type="primary" className="f-18 color-white os-semibold w-100">
               Купить за <br />

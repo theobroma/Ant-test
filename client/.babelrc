@@ -1,20 +1,8 @@
 {
-  "presets": ["react", "env", "stage-0"],
+  "presets": ["@babel/env", "@babel/react"],
   "plugins": [
-    "babel-plugin-transform-runtime",
-    "babel-plugin-styled-components",
-    "transform-decorators-legacy"
-  ],
-  "env": {
-    "development": {
-      "plugins": [
-        [
-          "module-resolver",
-          {
-            "root": ["./src/app"]
-          }
-        ]
-      ]
-    }
-  }
+    "@babel/plugin-transform-runtime",
+    "@babel/plugin-proposal-class-properties",
+    "babel-plugin-styled-components"
+  ]
 }
