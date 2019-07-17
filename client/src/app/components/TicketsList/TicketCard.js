@@ -1,5 +1,5 @@
 import React from 'react';
-// import PropTypes from 'prop-types';
+import PropTypes from 'prop-types';
 import { Row, Col, Button } from 'antd';
 import format from 'helpers/format';
 import dayOfTheWeek from 'helpers/dayOfTheWeek';
@@ -106,7 +106,7 @@ const TicketCard = (props) => {
 
 TicketCard.propTypes = {
   ticket: ticketShape,
-  currency: currencyShape,
+  currency: PropTypes.arrayOf(currencyShape),
   filter: filterShape,
 };
 
