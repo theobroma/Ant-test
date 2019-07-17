@@ -6,7 +6,6 @@ import { composeWithDevTools } from 'redux-devtools-extension';
 import { loadState, saveState } from './helpers/localStorage';
 import rootReducer from './reducers';
 //mock data
-import MOCK_DATA from './helpers/MOCK_DATA.json';
 import TICKETS_MOCK_DATA from './helpers/TICKETS_MOCK_DATA.json';
 import CURRENCY_MOCK_DATA from './helpers/CURRENCY_MOCK_DATA.json';
 
@@ -14,11 +13,6 @@ const configureStore = () => {
   const persistedState = loadState();
 
   let totalInitialState = {
-    users: {
-      data: MOCK_DATA,
-      pending: false,
-      errorMessage: '',
-    },
     tickets: {
       data: TICKETS_MOCK_DATA.tickets,
       pending: false,
