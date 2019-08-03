@@ -9,9 +9,9 @@ function filter(state = initialState, action) {
   const { type, currency, stops } = action;
   switch (type) {
     case SET_CURRENCY:
-      return { ...state, currency: currency };
+      return { ...state, currency };
     case SET_STOPS:
-      return { ...state, stops: stops };
+      return { ...state, stops };
     default:
       return state;
   }

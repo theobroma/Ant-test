@@ -1,9 +1,10 @@
-import React from 'react';
-import PropTypes from 'prop-types';
+import React, { Fragment } from 'react';
+// import PropTypes from 'prop-types';
 import _ from 'lodash';
-import { Button, Radio, Checkbox, Icon } from 'antd';
+import { Row, Col, Radio, Checkbox } from 'antd';
 import { EnumsMap } from 'constants/enums/Enums';
 import { STOPS_COUNT_TYPE } from 'constants/enums/EnumsNames';
+import { filterShape } from 'types';
 import StyledTicketsFilter from './TicketsFilter.styled';
 
 const CheckboxGroup = Checkbox.Group;
@@ -19,7 +20,7 @@ const defaultCheckedList = [0, 1];
 class TicketsFilter extends React.Component {
   state = {
     // radio
-    currency: 'UAH',
+    // currency: 'UAH',
     // checkbox
     checkedList: defaultCheckedList,
     indeterminate: true,
@@ -27,7 +28,7 @@ class TicketsFilter extends React.Component {
   };
 
   handleCurrencyChange = (e) => {
-    this.setState({ currency: e.target.value });
+    // this.setState({ currency: e.target.value });
     this.props.setCurrency(e.target.value);
   };
 
@@ -54,48 +55,62 @@ class TicketsFilter extends React.Component {
         checkAll: e.target.checked,
       },
       () => {
-        console.log(this.state);
+        // console.log(this.state);
         this.props.setStops(this.state.checkedList);
       },
     );
   };
 
   render() {
-    // const { currency } = this.state;
+    const { filter } = this.props;
+    const { indeterminate, checkAll, checkedList } = this.state;
     return (
-      <StyledTicketsFilter>
-        <div className="pa3">
-          <div className="form-group">
-            <label className="control-label">Валюта</label>
-            <Radio.Group value={this.props.filter.currency} onChange={this.handleCurrencyChange}>
-              <Radio.Button value="UAH">UAH</Radio.Button>
-              <Radio.Button value="USD">USD</Radio.Button>
-              <Radio.Button value="EUR">EUR</Radio.Button>
-            </Radio.Group>
+      <Fragment>
+        <Row>
+          <Col md={24} style={{ visibility: 'hidden' }}>
+            <div>for padding</div>
+          </Col>
+        </Row>
+        <StyledTicketsFilter>
+          <div className="pa3">
+            <div className="form-group">
+              <label className="control-label" htmlFor="radio-currency">
+                Валюта
+              </label>
+              <Radio.Group value={filter.currency} onChange={this.handleCurrencyChange}>
+                <Radio.Button value="UAH">UAH</Radio.Button>
+                <Radio.Button value="USD">USD</Radio.Button>
+                <Radio.Button value="EUR">EUR</Radio.Button>
+              </Radio.Group>
+            </div>
+            {/* checkbox */}
+            <div className="form-group">
+              <label className="control-label" htmlFor="checkbox-stops">
+                Количество пересадок
+              </label>
+              <Checkbox
+                indeterminate={indeterminate}
+                onChange={this.onCheckAllChange}
+                checked={checkAll}
+              >
+                Все
+              </Checkbox>
+              <CheckboxGroup
+                options={plainOptions}
+                value={checkedList}
+                onChange={this.onChange}
+                className="flex flex-column"
+              />
+            </div>
           </div>
-          {/* checkbox */}
-          <div className="form-group">
-            <label className="control-label">Количество пересадок</label>
-            <Checkbox
-              indeterminate={this.state.indeterminate}
-              onChange={this.onCheckAllChange}
-              checked={this.state.checkAll}
-            >
-              Все
-            </Checkbox>
-            <CheckboxGroup
-              options={plainOptions}
-              value={this.state.checkedList}
-              onChange={this.onChange}
-              className="flex flex-column"
-            />
-          </div>
-        </div>
-      </StyledTicketsFilter>
+        </StyledTicketsFilter>
+      </Fragment>
     );
   }
 }
 
-TicketsFilter.propTypes = {};
+TicketsFilter.propTypes = {
+  filter: filterShape,
+};
 
 export default TicketsFilter;

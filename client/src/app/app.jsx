@@ -8,7 +8,7 @@ import './assets/styles/index.scss';
 import MainApp from './MainApp';
 import configureStore from './configureStore';
 
-window.__localeId__ = 'ru';
+window.__localeId__ = 'ru'; // eslint-disable-line
 
 const store = configureStore();
 render(

@@ -1,6 +1,7 @@
-var format = require('date-fns/format');
+/* eslint-disable */
+const format = require('date-fns/format');
 
-var locales = {
+const locales = {
   ru: require('date-fns/locale/ru'),
 };
 

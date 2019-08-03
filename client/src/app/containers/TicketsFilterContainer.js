@@ -1,5 +1,5 @@
 import React from 'react';
-import PropTypes from 'prop-types';
+// import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
 import TicketsFilterComponent from 'components/TicketsFilter';
 import { setCurrency, setStops } from 'actions/filter';
@@ -19,14 +19,12 @@ class TicketsFilter extends React.PureComponent {
 }
 
 const mapStateToProps = (state) => ({
-  //   currentUser: getCurrentUser(state),
   tickets: state.tickets.data,
   filter: state.filter,
   // currency: state.currency.data.exchangeRate,
 });
 
 const mapDispatchToProps = {
-  // getTranslation
   setCurrency,
   setStops,
 };

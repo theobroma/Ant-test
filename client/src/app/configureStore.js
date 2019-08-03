@@ -1,11 +1,11 @@
-import { createStore, combineReducers, applyMiddleware, compose } from 'redux';
+import { createStore, applyMiddleware } from 'redux';
 import thunk from 'redux-thunk';
 import { createLogger } from 'redux-logger';
 import throttle from 'lodash/throttle';
 import { composeWithDevTools } from 'redux-devtools-extension';
 import { loadState, saveState } from './helpers/localStorage';
 import rootReducer from './reducers';
-//mock data
+// mock data
 import TICKETS_MOCK_DATA from './helpers/TICKETS_MOCK_DATA.json';
 import CURRENCY_MOCK_DATA from './helpers/CURRENCY_MOCK_DATA.json';
 
