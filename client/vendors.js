@@ -12,7 +12,6 @@ import 'redux-logger';
 import 'redux-thunk';
 import 'recompose';
 import 'reselect';
-import 'semantic-ui-react';
 import 'shortid';
 import 'styled-components';
 import 'uuid';
